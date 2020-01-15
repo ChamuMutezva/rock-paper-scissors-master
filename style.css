@@ -24,3 +24,38 @@ svg {
 .scoreboard {
     color: white;
 }
+
+/*choices main section */
+.choices {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.choice {
+    width: 50vw;
+    height: 30vh;
+}
+
+main svg {
+    display: block;
+    margin: auto;
+}
+.rock {
+    width: 100vw;
+}
+.imageBorder {
+    width: 62px;
+    margin: auto;
+    border: 7px solid red;
+    border-radius: 50%;
+    background-color: white;
+}
+.modal {
+    position: absolute;
+    top: 105px;
+    left: 27px;
+    transform: scale(1.8);
+    display: none;
+}
