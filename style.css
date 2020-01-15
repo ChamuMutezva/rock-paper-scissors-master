@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: radial-gradient(hsl(214, 47%, 23%) , hsl(237, 49%, 15%));    
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+nav {
+    width: 80%;
+    border: 1px solid white;
+    margin: 5% auto;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+svg {
+    transform: scale(0.5);
+}
+.scoreboard {
+    color: white;
+}
+
+/*choices main section */
+.choices {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.choice {
+    width: 50vw;
+    height: 30vh;
+}
+
+main svg {
+    display: block;
+    margin: auto;
+}
+.rock {
+    width: 100vw;
+}
+.imageBorder {
+    width: 62px;
+    margin: auto;
+    border: 7px solid red;
+    border-radius: 50%;
+    background-color: white;
+}
+.modal {
+    position: absolute;
+    top: 105px;
+    left: 27px;
+    transform: scale(1.8);
+    display: none;
+}
