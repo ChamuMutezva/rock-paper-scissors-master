@@ -1,5 +1,8 @@
 # Frontend Mentor - Rock, Paper, Scissors
 
+### live preview
+https://chamumutezva.github.io/rock-paper-scissors-master/
+
 ![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
