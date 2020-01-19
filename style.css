@@ -8,6 +8,7 @@ body {
     height: 100vh;
     background-size: contain;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 nav {
     width: 80%;
@@ -19,10 +20,17 @@ nav {
     justify-content: space-around;
 }
 svg {
+   /* margin: auto; */
+    display: block;
     transform: scale(0.5);
 }
 .scoreboard {
-    color: white;
+    width: 28%;
+    color: black;
+    background: white;
+    text-align: center;
+    padding: 5%;
+    border-radius: 6px;
 }
 
 /*choices main section */
@@ -34,8 +42,9 @@ svg {
 }
 
 .choice {
-    width: 50vw;
-    height: 30vh;
+    width: 30vw;
+    height: 22vh;
+    margin: auto;
 }
 
 main svg {
@@ -48,14 +57,85 @@ main svg {
 .imageBorder {
     width: 62px;
     margin: auto;
-    border: 7px solid red;
+    border: 7px solid  hsl(349, 71%, 52%);
     border-radius: 50%;
     background-color: white;
 }
-.modal {
+/*Create the dark lines joining choices */
+.choice::after {
     position: absolute;
-    top: 105px;
-    left: 27px;
+    z-index: -1;
+    content: "";
+    width: 110px;
+    height: 10px;    
+    background-color: hsl(229, 25%, 31%);
+}
+.paper::after {
+    top: 31%;
+    left: 36%;
+}
+.rock::after {
+    top: 44%;
+    left: 27%;
+    transform: rotate(56deg);
+}
+.scissors::after {
+    top: 44%;
+    left: 47%;
+    transform: rotate(122deg);    
+}
+
+.paper .imageBorder {   
+    float: right;
+    border: 7px solid hsl(230, 89%, 62%);
+}
+ .scissors .imageBorder {
+    float: left;
+    border: 7px solid hsl(39, 89%, 49%);
+}
+/*___------------------------- */ 
+input.rules {
+    width: 30%;
+    height: 6vh;
+    display: block;
+    margin: auto;
+    background-color:  hsl(229, 25%, 31%);
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+
+/* modal */
+.modal {
+    width: 100%;
+ height: 100%; 
+    background: white;
+    position: absolute;
+    top: 15%;
+    left: 5%;
     transform: scale(1.8);
-    display: none;
+   /* display: none; */
+}
+.modal h1 {
+    text-align: center;
+    font-size: medium;
+     margin-top: 25%; 
+}
+.modal svg {
+    margin: -14% auto;   
+}
+
+.fa-times {    
+    width: 30%;
+    color:black;
+    text-align: center;
+    margin: auto;
+}
+.close {   
+    width: 50%;
+    display: block;
+    margin: auto;
+    padding: 3%;
+    text-align: center;
 }
