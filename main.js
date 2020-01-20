@@ -18,9 +18,12 @@ choices.addEventListener("click", function (evt) {
     console.log(targetElement);
     if (targetElement.classList.contains("paper")) {
         console.log("You have picked paper");
+        alert("You have picked paper")
     } else if (targetElement.classList.contains("rock")) {
         console.log("You have picked rock");
+        alert("You have picked rock")
     } else {
         console.log("You have picked scissors");
+        alert("You have picked scissors")
     }
 })
