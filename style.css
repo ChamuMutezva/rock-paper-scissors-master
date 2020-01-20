@@ -85,7 +85,7 @@ svg {
   grid-column-gap: 4rem;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0 4rem 0;
+  margin: 2rem 0 2rem 0;
 }
 
 .choice {
@@ -295,7 +295,7 @@ a.rules:hover {
   text-decoration: none;
   font-size: 2rem;
   font-weight: 500;
-  margin-top: 2.5rem;
+  margin-top: 0.5rem;
 }
 
 .fa-times:hover {
@@ -348,4 +348,7 @@ a.rules:hover {
     top: -41px;
     left: 194px;
   }
+  .fa-times {    
+    margin-top: 2.5rem;
+}
 }
