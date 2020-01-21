@@ -43,20 +43,36 @@ computerChoice = () => {
 
 playGame = (myChoice, computerChoice) => {
     let msg = "game starts...";
+    let myMsg = "My choice is " + myChoice
+    let compMsg = "Computer choice is " + computerChoice;
+    let finalMsg;
    // console.log(msg);
-    console.log("My choice is " + myChoice);
-    console.log("Computer choice is " + computerChoice);
+    console.log(myMsg);
+    console.log(compMsg);
+
      switch (myChoice) {
         case "rock":
             if (computerChoice == "rock") {
                 console.log("It's a draw");
                 msg = "It's a draw";
+                finalMsg = `${myMsg}
+                 ${compMsg}
+                  ${msg}`;
+                  alert(finalMsg);
             } else if (computerChoice == "paper") {
                 console.log("Computer wins");
-                msg = "Computer wins";
+                msg = "Computer wins";                
+                finalMsg = `${myMsg}
+                 ${compMsg}
+                  ${msg}`;
+                  alert(finalMsg);
             } else {
                 console.log("I win");
-                msg = "I win";
+                msg = "I win";                
+                finalMsg = `${myMsg}
+                 ${compMsg}
+                  ${msg}`;
+                  alert(finalMsg);
             }
             return msg;
             break;
@@ -64,13 +80,27 @@ playGame = (myChoice, computerChoice) => {
         case "paper": {
             if (computerChoice == "paper") {
                 console.log("It's a draw");
-                msg = "It's a draw";
+                msg = "It's a draw";                
+                finalMsg = `${myMsg}
+                 ${compMsg}
+                  ${msg}`;
+                  alert(finalMsg);
             } else if (computerChoice == "scissors") {
                 console.log("Computer wins");
                 msg = "Computer wins";
+               
+                finalMsg = `${myMsg}
+                 ${compMsg}
+                  ${msg}`;
+                  alert(finalMsg);
             } else {
                 console.log("I win");
                 msg = "I win";
+                
+                finalMsg = `${myMsg}
+                 ${compMsg}
+                  ${msg}`;
+                  alert(finalMsg);
             }
             return msg;
             break;
@@ -80,12 +110,27 @@ playGame = (myChoice, computerChoice) => {
             if (computerChoice == "scissors") {
                 console.log("It's a draw");
                 msg = "It's a draw";
+            
+                finalMsg = `${myMsg}
+                 ${compMsg}
+                  ${msg}`;
+                  alert(finalMsg);
             } else if (computerChoice == "rock") {
                 console.log("Computer wins");
                 msg = "Computer wins";
+                
+                finalMsg = `${myMsg}
+                 ${compMsg}
+                  ${msg}`;
+                  alert(finalMsg);
             } else {
                 console.log("I win");
                 msg = "I win";
+                
+                finalMsg = `${myMsg}
+                 ${compMsg}
+                  ${msg}`;
+                  alert(finalMsg);
             }
             return msg;
             break;
