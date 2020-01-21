@@ -36,7 +36,7 @@ choices.addEventListener("click", function (evt) {
         //  alert("You have picked scissors")
     }
     // console.log(computerSelection);
-    let result = playGame(myChoice, computerSelection)
+ let result = playGame(myChoice, computerSelection)
     choices.style.display = 'none'
     showSelection(myChoice, 'user')
     showSelection(computerSelection, 'computer')
@@ -44,110 +44,53 @@ choices.addEventListener("click", function (evt) {
 
 })
 
+//generate a computer choice
 computerChoice = () => {
     const computerChoices = ["rock", "paper", "scissors"];
-    const compAnswer = Math.floor(Math.random() * computerChoices.length);
-    // console.log(computerChoices[compAnswer]);
+    const compAnswer = Math.floor(Math.random() * computerChoices.length);   
     return computerChoices[compAnswer];
 }
 
 playGame = (myChoice, computerChoice) => {
-    let msg = "game starts...";
-    // console.log(msg);
-    console.log("My choice is " + myChoice);
-    console.log("Computer choice is " + computerChoice);
+    let msg = "game starts...";   
      let myMsg = "My choice is " + myChoice
-    let compMsg = "Computer choice is " + computerChoice;
-    let finalMsg;
-   // console.log(msg);
-    console.log(myMsg);
-    console.log(compMsg);
+    let compMsg = "Computer choice is " + computerChoice;   
 
      switch (myChoice) {
         case "rock":
             if (computerChoice == "rock") {
-                console.log("It's a draw");
-                msg = "It's a draw";
-                finalMsg = `${myMsg}
-                 ${compMsg}
-                  ${msg}`;
-           //       alert(finalMsg);
+                msg = "It's a draw";              
             } else if (computerChoice == "paper") {
-                console.log("Computer wins");
-                msg = "Computer wins";                
-                finalMsg = `${myMsg}
-                 ${compMsg}
-                  ${msg}`;
-             //     alert(finalMsg);
+                msg = "Computer wins";               
             } else {
-                console.log("I win");
-                msg = "I win";                
-                finalMsg = `${myMsg}
-                 ${compMsg}
-                  ${msg}`;
-               //   alert(finalMsg);
+                msg = "I win";               
             }
             return msg;
 
         case "paper": {
             if (computerChoice == "paper") {
-                console.log("It's a draw");
                 msg = "It's a draw";                
-                finalMsg = `${myMsg}
-                 ${compMsg}
-                  ${msg}`;
-                 // alert(finalMsg);
             } else if (computerChoice == "scissors") {
-                console.log("Computer wins");
-                msg = "Computer wins";
-               
-                finalMsg = `${myMsg}
-                 ${compMsg}
-                  ${msg}`;
-                //  alert(finalMsg);
+                msg = "Computer wins";              
             } else {
-                console.log("I win");
-                msg = "I win";
-                
-                finalMsg = `${myMsg}
-                 ${compMsg}
-                  ${msg}`;
-                  //alert(finalMsg);
+                msg = "I win";              
             }
             return msg;
         }
 
         case "scissors": {
             if (computerChoice == "scissors") {
-                console.log("It's a draw");
-                msg = "It's a draw";
-            
-                finalMsg = `${myMsg}
-                 ${compMsg}
-                  ${msg}`;
-        //          alert(finalMsg);
+                msg = "It's a draw";              
             } else if (computerChoice == "rock") {
-                console.log("Computer wins");
-                msg = "Computer wins";
-                
-                finalMsg = `${myMsg}
-                 ${compMsg}
-                  ${msg}`;
-           //       alert(finalMsg);
+                msg = "Computer wins";              
             } else {
-                console.log("I win");
-                msg = "I win";
-                
-                finalMsg = `${myMsg}
-                 ${compMsg}
-                  ${msg}`;
-             //      alert(finalMsg);
+                msg = "I win";              
             }
             return msg;
         }
 
     }
-    // console.log(msg);
+    
 }
 
 showSelection = (figure, player) => {
