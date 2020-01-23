@@ -325,7 +325,8 @@ a.rules:hover {
   margin: auto;
   border-radius: 100%;
   border: 20px solid hsla(238, 48%, 15%, 0.685);
-  animation: animate 1.50s ease-out infinite ;
+  animation: animate-mobile 1.50s ease-out infinite ;
+  z-index: -1;
   }
 
  .pulse::after{
@@ -350,6 +351,39 @@ a.rules:hover {
 
  }
 }
+
+@keyframes animate-mobile
+{
+ 0%
+ {
+   transform: scale(0.6);
+   opacity: 0;
+  }
+ 50%{
+   opacity: 1;
+ 
+ }
+ 100%{
+   transform: scale(1.2);
+   opacity:0;
+   border: 17px solid hsla(239, 41%, 35%, 0.726);
+
+ }
+}
+
+@media screen and (min-width: 1100px){
+  .pulse::before, .pulse::after{
+    content: '';
+    animation: animate 1.50s ease-out infinite;
+}
+
+.pulse::after{
+  animation-delay: 1s;
+}
+
+}
+
+
 
 .paper-game {
   border: 15px solid hsl(230, 89%, 65%);
