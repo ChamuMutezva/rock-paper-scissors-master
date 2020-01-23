@@ -80,9 +80,9 @@ playGame = (myChoice, computerChoice) => {
             if (computerChoice == "rock") {
                 msg = "It's a draw";
             } else if (computerChoice == "paper") {
-                msg = "Computer wins";
+                msg = "You lose";
             } else {
-                msg = "I win";
+                msg = "You win";
             }
             return msg;
 
@@ -90,9 +90,9 @@ playGame = (myChoice, computerChoice) => {
             if (computerChoice == "paper") {
                 msg = "It's a draw";
             } else if (computerChoice == "scissors") {
-                msg = "Computer wins";
+                msg = "You lose";
             } else {
-                msg = "I win";
+                msg = "You win";
             }
             return msg;
         }
@@ -101,9 +101,9 @@ playGame = (myChoice, computerChoice) => {
             if (computerChoice == "scissors") {
                 msg = "It's a draw";
             } else if (computerChoice == "rock") {
-                msg = "Computer wins";
+                msg = "You lose";
             } else {
-                msg = "I win";
+                msg = "You win";
             }
             return msg;
         }
@@ -195,10 +195,10 @@ playAgain = () => {
 
 setScore = (points) => {
     console.log(points)
-    if (points === 'I win') {
+    if (points === 'You win') {
         counter++
         counterDiv.innerHTML = counter
-    } else if (points === "Computer wins") {
+    } else if (points === "You lose") {
 
         counter--
         counterDiv.innerHTML = counter
