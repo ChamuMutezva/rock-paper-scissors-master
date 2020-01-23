@@ -74,18 +74,14 @@ svg {
 
 /*choices main section */
 
-.choices {
-  /*   width: 100vw;*/
-  /*  display: flex;*/
-  /*flex-direction: row;*/
-  /*flex-wrap: wrap;*/
+.choices {  
   display: grid;
   grid-template-areas: "paper scissors" "rock rock";
   grid-row-gap: 2rem;
   grid-column-gap: 4rem;
   justify-content: center;
   align-items: center;
-  margin: 3rem 0 8rem 0;
+  margin: 1rem 0 2rem 0;
 }
 
 .choice {
@@ -101,8 +97,8 @@ main svg {
 }
 
 .imageBorder {
-  width: 8rem;
-  height: 8rem;
+  width: 6rem;
+  height: 6rem;
   margin: auto;
   border-radius: 100%;
   display: flex;
@@ -132,7 +128,7 @@ main svg {
   transform: rotate(55deg);
   background-color: hsla(238, 48%, 15%, 0.699);
   z-index: -1;
-  right: 6px;
+  right: -23px;
   top: 0;
 }
 
@@ -140,12 +136,12 @@ main svg {
   content: "";
   position: absolute;
   height: 15px;
-  width: 169px;
+  width: 155px;
   transform: rotate(-55deg);
   background-color: hsla(238, 48%, 15%, 0.699);
   z-index: -1;
-  top: 0;
-  right: -61px;
+  top: -10px;
+  right: -70px;
 }
 
 .scissors {
@@ -165,11 +161,11 @@ main svg {
   content: "";
   position: absolute;
   height: 15px;
-  width: 190px;
+  width: 175px;
   background-color: hsla(238, 48%, 15%, 0.699);
   z-index: -1;
-  bottom: 37px;
-  left: 113px;
+  bottom: 31px;
+  left: 47px;
 }
 
 .rock:hover, .paper:hover, .scissors:hover, .rock-game:hover, .paper-game:hover {
@@ -409,6 +405,7 @@ a.rules:hover {
   text-align: center;
   letter-spacing: 0.2rem;
   text-shadow: 0 2px 3px black;
+  font-size: small;
 }
 
 .game-result {
@@ -423,7 +420,7 @@ a.rules:hover {
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 
 .newGame-button {
@@ -519,5 +516,10 @@ a.rules:hover {
   nav {
     padding: 10px;
   }
+  .paper:after {    
+    bottom: 60px;
+    left: 100px;
+}
+
   /* changes to reposition message in win/lose modal ends here */
 }
