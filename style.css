@@ -313,6 +313,44 @@ a.rules:hover {
   position: relative;
 }
 
+.pulse{
+ 
+     }
+
+.pulse::before, .pulse::after{
+  content: '';
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  margin: auto;
+  border-radius: 100%;
+  border: 20px solid hsla(238, 48%, 15%, 0.685);
+  animation: animate 1.50s ease-out infinite ;
+  }
+
+ .pulse::after{
+   animation-delay: 1s;
+ }
+
+ @keyframes animate
+{
+ 0%
+ {
+   transform: scale(1);
+   opacity: 0;
+  }
+ 50%{
+   opacity: 1;
+ 
+ }
+ 100%{
+   transform: scale(2.5);
+   opacity:0;
+   border: 17px solid hsla(239, 41%, 35%, 0.726);
+
+ }
+}
+
 .paper-game {
   border: 15px solid hsl(230, 89%, 65%);
   box-shadow: inset 0 4px 3px -1px rgba(128, 128, 128, 0.767), 1px 8px hsl(230, 89%, 62%);
@@ -323,6 +361,10 @@ a.rules:hover {
   border: 15px solid hsl(40, 84%, 53%);
   box-shadow: inset 0 4px 3px -1px rgba(128, 128, 128, 0.767), 1px 8px hsl(39, 89%, 49%);
   position: relative;
+}
+
+.waiting-game{
+  background-color: hsla(238, 48%, 15%, 0.438);;
 }
 
 .info-game {

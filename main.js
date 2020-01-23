@@ -10,10 +10,10 @@ const resultDiv = document.querySelector(".title-container")
 /* Counter variables */
 const counterDiv = document.querySelector(".score")
 
- 
+
 /*check if there is any value in the local storage. otherwise it sets the counter with zero */
-let counter = localStorage.getItem('counter') ?  (JSON.parse(localStorage.getItem('counter'))) : 0
- 
+let counter = localStorage.getItem('counter') ? (JSON.parse(localStorage.getItem('counter'))) : 0
+
 
 console.log(counter, 'counter')
 counterDiv.innerHTML = counter
@@ -50,63 +50,66 @@ choices.addEventListener("click", function (evt) {
         //  alert("You have picked scissors")
     }
     // console.log(computerSelection);
- let result = playGame(myChoice, computerSelection)
+    let result = playGame(myChoice, computerSelection)
     choices.style.display = 'none'
 
     showSelection(myChoice, 'user')
-    showSelection(computerSelection, 'computer')
-    setScore(result)
-    showResult(result)
+    showSelection('waiting', 'computer')
+    setTimeout(() => {
+        showSelection(computerSelection, 'computer')
+        setScore(result)
+        showResult(result)
+    }, 2000);
 
 })
 
 //generate a computer choice
 computerChoice = () => {
     const computerChoices = ["rock", "paper", "scissors"];
-    const compAnswer = Math.floor(Math.random() * computerChoices.length);   
+    const compAnswer = Math.floor(Math.random() * computerChoices.length);
     return computerChoices[compAnswer];
 }
 
 playGame = (myChoice, computerChoice) => {
-    let msg = "game starts...";   
-     let myMsg = "My choice is " + myChoice
-    let compMsg = "Computer choice is " + computerChoice;   
+    let msg = "game starts...";
+    let myMsg = "My choice is " + myChoice
+    let compMsg = "Computer choice is " + computerChoice;
 
     switch (myChoice) {
         case "rock":
             if (computerChoice == "rock") {
-                msg = "It's a draw";              
+                msg = "It's a draw";
             } else if (computerChoice == "paper") {
-                msg = "Computer wins";               
+                msg = "Computer wins";
             } else {
-                msg = "I win";               
+                msg = "I win";
             }
             return msg;
 
         case "paper": {
             if (computerChoice == "paper") {
-                msg = "It's a draw";                
+                msg = "It's a draw";
             } else if (computerChoice == "scissors") {
-                msg = "Computer wins";              
+                msg = "Computer wins";
             } else {
-                msg = "I win";              
+                msg = "I win";
             }
             return msg;
         }
 
         case "scissors": {
             if (computerChoice == "scissors") {
-                msg = "It's a draw";              
+                msg = "It's a draw";
             } else if (computerChoice == "rock") {
-                msg = "Computer wins";              
+                msg = "Computer wins";
             } else {
-                msg = "I win";              
+                msg = "I win";
             }
             return msg;
         }
 
     }
-    
+
 }
 
 showSelection = (figure, player) => {
@@ -128,13 +131,16 @@ showSelection = (figure, player) => {
             </svg>
         `
 
-    } else {
+    } else if (figure === 'rock'){
         hand = `
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
         <path fill="#3B4262"
          d="M45.06 12.22c-.642-8.096-9.734-7.269-9.734-7.269-3.837-6.765-9.832-1.865-9.832-1.865-4.606-6.63-10.38-.486-10.38-.486-9.957-1.074-9.571 7.066-9.571 7.066-.234 2.588 1.403 10.593 1.403 10.593-1.477-4.614-4.68-.784-4.68-.784-3.94 6.078-.975 9.405-.975 9.405 5.33 6.246 16.688 13.743 16.688 13.743 4.113 2.356 2.373 4.457 2.373 4.457l24.876-4.11.571-4.718c3.782-11.436-.739-26.032-.739-26.032z" />
         </svg>`
+    }else {
+        hand = ``
     }
+
     if (player === 'user') {
         text = 'You picked'
     } else if (player === 'computer') {
@@ -150,8 +156,16 @@ showSelection = (figure, player) => {
     <p class="info-game">${text}</p>
   </div>
   `
+
+
     gameDiv.style.display = "flex"
     gameDiv.innerHTML += div
+
+    let userContainer = document.querySelectorAll('.user-container')
+    if (userContainer.length === 3 ){
+        document.querySelector('.game-container').firstElementChild.nextElementSibling.remove()
+     }
+
 }
 
 showResult = (result) => {
@@ -164,6 +178,9 @@ showResult = (result) => {
     resultDiv.style.display = "block"
     resultDiv.innerHTML = div
 
+    if (result === 'I win'){
+        document.querySelector('.game-container').firstElementChild.firstElementChild.classList.add('pulse')
+    }
 }
 
 playAgain = () => {
