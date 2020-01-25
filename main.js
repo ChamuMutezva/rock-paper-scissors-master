@@ -37,17 +37,20 @@ choices.addEventListener("click", function (evt) {
     let computerSelection = computerChoice();
     // console.log(targetElement);
     if (targetElement.classList.contains("paper")) {
-        // console.log("You have picked paper");
+         console.log("You have picked paper");
         myChoice = "paper";
         //  alert("You have picked paper")
     } else if (targetElement.classList.contains("rock")) {
-        // console.log("You have picked rock");
+         console.log("You have picked rock");
         myChoice = "rock";
         //  alert("You have picked rock")
-    } else {
+    } else if (targetElement.classList.contains("scissors")) {
         myChoice = "scissors";
-        // console.log("You have picked scissors");
+        console.log("You have picked scissors");
         //  alert("You have picked scissors")
+    } else {
+        console.log("Invalid selection")
+        return;
     }
     // console.log(computerSelection);
     let result = playGame(myChoice, computerSelection)
