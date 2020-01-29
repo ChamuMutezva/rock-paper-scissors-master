@@ -181,7 +181,7 @@ showResult = (result) => {
     resultDiv.style.display = "block"
     resultDiv.innerHTML = div
 
-    if (result === 'I win'){
+    if (result === 'You win'){
         document.querySelector('.game-container').firstElementChild.firstElementChild.classList.add('pulse')
     }
 }
